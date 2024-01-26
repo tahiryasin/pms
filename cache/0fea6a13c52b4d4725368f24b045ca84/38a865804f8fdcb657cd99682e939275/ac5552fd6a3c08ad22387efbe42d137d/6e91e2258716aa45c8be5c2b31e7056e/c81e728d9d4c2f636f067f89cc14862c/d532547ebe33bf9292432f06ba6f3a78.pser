@@ -1,0 +1,1 @@
+a:3:{s:3:"key";s:63:"cache/stash_default/models/expense_categories/2/json_serialize/";s:4:"data";a:2:{s:6:"return";a:6:{s:2:"id";i:2;s:5:"class";s:15:"ExpenseCategory";s:8:"url_path";s:21:"/expense-categories/2";s:4:"name";s:7:"Support";s:11:"is_archived";b:0;s:10:"is_default";b:0;}s:9:"createdOn";i:1702175978;}s:10:"expiration";i:1702332909;}

@@ -1,0 +1,1 @@
+a:3:{s:3:"key";s:46:"cache/stash_default/models/job_types/3/__json/";s:4:"data";a:2:{s:6:"return";s:162:"{"id":3,"class":"JobType","url_path":"\/job-types\/3","name":"Support","is_archived":false,"updated_on":1490341969,"is_default":false,"default_hourly_rate":125.0}";s:9:"createdOn";i:1702176041;}s:10:"expiration";i:1702331295;}

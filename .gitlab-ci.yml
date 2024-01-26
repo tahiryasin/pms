@@ -1,0 +1,44 @@
+# ID GitLab CI configuration
+#
+# Docs: http://doc.gitlab.com/ce/ci/languages/php.html
+
+image: php:7.0.3-cli
+
+#cache:
+#  paths:
+#    - activecollab/current/vendor/
+
+before_script:
+  - echo "Setting up runner"
+  - bash tests/bin/docker_install.sh
+  - echo "Updating dependencies"
+  - composer install --ignore-platform-reqs
+  - echo "Rename config file"
+  - mv config/config.test.default.php config/config.test.php
+
+services:
+  - elasticsearch:1.7
+  - memcached:1.4
+
+variables:
+  MYSQL_HOST: "172.17.42.1"
+  MYSQL_PORT: "3306"
+  MYSQL_ROOT_PASSWORD: "8ac2Yk0x4NFb" 
+  MYSQL_DATABASE: "activecollab_test"
+  MYSQL_USER: "gitlab_runner"
+  MYSQL_PASSWORD: "bhNC3K8Sas9eh0tF"
+  ID_ENVIRONMENT: "test"
+  ID_LOG_HANDLER: "blackhole"
+#  ACTIVECOLLAB_CACHE_BACKEND: "memcached"
+  ACTIVECOLLAB_MYSQL_TEST_HOST: "$MYSQL_HOST"
+  ACTIVECOLLAB_MYSQL_TEST_PORT: "$MYSQL_PORT"
+  ACTIVECOLLAB_MYSQL_TEST_USER: "$MYSQL_USER"
+  ACTIVECOLLAB_MYSQL_TEST_PASS: "$MYSQL_PASSWORD"
+  ACTIVECOLLAB_MYSQL_TEST_DATABASE: "$MYSQL_DATABASE"
+  ACTIVECOLLAB_ELASTIC_SEARCH_TEST_HOST: "elasticsearch"
+  ACTIVECOLLAB_ELASTIC_SEARCH_TEST_PORT: "9200"
+
+php:7.0.3-cli:
+  script:
+    - echo "Running PHPUnit Tests"
+    - phpunit

@@ -1,0 +1,1 @@
+a:3:{s:3:"key";s:55:"cache/stash_default/models/availability_types/2/__json/";s:4:"data";a:2:{s:6:"return";s:152:"{"id":2,"class":"AvailabilityType","url_path":"#","name":"Vacation","created_on":1701516380,"updated_on":null,"level":"not_available","is_in_use":false}";s:9:"createdOn";i:1702133882;}s:10:"expiration";i:1702281394;}
